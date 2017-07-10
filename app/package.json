@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "visualdata",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -13,5 +13,24 @@
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
-  }
+  },
+  "description": "Data visualization for bioinformatics",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasodev/visual.git"
+  },
+  "keywords": [
+    "data",
+    "visualization",
+    "bioinformatics",
+    "genomics"
+  ],
+  "author": "Pablo Paso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pasodev/visual/issues"
+  },
+  "homepage": "https://github.com/pasodev/visual#readme"
 }
