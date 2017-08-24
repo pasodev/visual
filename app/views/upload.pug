@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Formulario de subida de ficheros
+
+    if resp
+       h2 #{resp} 
+
+    form(method='POST' action='upload' enctype='multipart/form-data')
+        div.form-group
+            input#name.form-control(type='file' name='filename' multiple='multiple')
+            button.btn.btn-primary(type='submit') Subir
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg
