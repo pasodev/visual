@@ -8,11 +8,15 @@ var users = require('./routes/users');
 
 // Mine
 var upload = require('./routes/upload');
-var fileUpload = require('express-fileupload');
+var list =   require('./routes/list');
+var show = require('./routes/show');
+var getremote = require('./routes/getremote');
 
 var app = express();
 
+// My global vars
 
+var routeToFiles = __dirname + '/../uploads/';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +31,9 @@ app.use('/users', users);
 
 // Mine
 app.use('/upload', upload);
+app.use('/list', list);
+app.use('/show', show);
+app.use('/getremote', getremote);
 
 
 app.listen(3000, function(){

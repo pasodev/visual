@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+    H1 Estos son los ficheros disponibles.
+    H2 Selecciona el que quieras visualizar:
+    #{myFiles}
+    ul
+        each val in myFiles
+            li
+                a(href='/show/' + val) #{val}

@@ -2,9 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Mutifile Bioinformatics Visualization
+  div(class='panel')
+    p(class='panel-heading') Mutifile Bioinformatics Visualization
 
-  a(href="/upload")
-    button(type="button") Upload a file
-  a(href="/list")
-    button(type="button") Browse uploaded files
+  div(class='btn-group')
+    a(href='/upload')
+      button(type='button' class='btn btn-default') Upload a file
+    a(href='/list')
+      button(type='button' class='btn btn-default') Browse uploaded files
+    a(href='/getremote')
+       button(type='button' class='btn btn-default') Get data from NCBI

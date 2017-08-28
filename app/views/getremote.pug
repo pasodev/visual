@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Get data from NCBI
+
+
+    form(method='POST' action='getremote' enctype='multipart/form-data')
+        div.form-group
+            input#id.form-control(type='text' name='id' multiple='multiple')
+            select#db.form-control(name='db')
+                each dbs in db
+                    option(value=dbs) #{dbs}
+            button.btn.btn-primary(type='submit') Request
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

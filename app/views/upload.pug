@@ -4,7 +4,11 @@ block content
     h1 Formulario de subida de ficheros
 
     if resp
-       h2 #{resp} 
+       h2 #{resp}
+       h2
+        a(href='/')
+           Volver al indice
+       h2 o subir otro fichero
 
     form(method='POST' action='upload' enctype='multipart/form-data')
         div.form-group
