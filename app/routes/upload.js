@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
     console.log('not file indicated');
     errors = {error : {msg:'No ha indicado un archivo'}};
     res.render('upload');
-  } else {
+ // } else {
       form.once('error', console.log);
       form.encoding = 'binary';
       form.parse(req, function (err, fields, files) {
