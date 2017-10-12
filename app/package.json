@@ -21,7 +21,9 @@
     "multer": "^1.3.0",
     "pug": "~2.0.0-beta11",
     "pug-bootstrap": "0.0.15",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "tnt.board": "^0.1.9",
+    "tnt.genome": "^0.1.7"
   },
   "description": "Data visualization for bioinformatics",
   "main": "app.js",

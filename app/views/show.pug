@@ -1,4 +1,42 @@
 extends layout
 
 block content
+    script( src='https://d3js.org/d3.v3.min.js')
+    script( src='../board/tnt.board.js')
+    link(rel='stylesheet', src='../board/tnt.board.css')
+    script.
+        var myBoard = tnt.board().from(20).to(500).max(1000);
+
+            var axis_track = tnt.board.track()
+                .height(20)
+                .color("white")
+                .display(tnt.board.track.feature.axis()
+                    .orientation("top")
+            );
+
+            var block_track = tnt.board.track()
+            .label("my track")
+            .height(30)
+            .color("#FFCFDD")
+            .data (tnt.board.track.data.sync()
+            .retriever (function () {
+                return [
+                {
+                    start : 200,
+                    end   : 350
+            }
+            ];
+            })
+            )
+            .display(tnt.board.track.feature.block()
+            .color("blue")
+            );
+
+
+            myBoard(document.getElementById("mydiv"));
+            myBoard
+                .add_track(axis_track)
+                .add_track(block_track);
+                myBoard.start();
     p data: #{data}
+    div(id='mydiv')

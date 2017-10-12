@@ -34,7 +34,7 @@ app.use('/upload', upload);
 app.use('/list', list);
 app.use('/show', show);
 app.use('/getremote', getremote);
-
+app.use('/board',express.static(__dirname + '/node_modules/tnt.board/build/'));
 
 app.listen(3000, function(){
     console.log('Server started...');
