@@ -9,15 +9,17 @@ var vcf = require('biojs-vcf');
 router.get('/:fileName', function(req, res, next) {
 
     var routeToFiles = __dirname + '/../uploads/';
-
+    var myFeature = [];
     console.log(routeToFiles + req.param('fileName'));
     vcf.read(routeToFiles + req.param('fileName'));
     vcf.on('data', function(feature){
+        myFeature.push(feature);
     });
 
     vcf.on('end', function(feature){
         console.log('end of file')
-        res.render('show', { data: feature});
+        console.log(myFeature);
+        res.render('show', { data: myFeature});
     });
 
     vcf.on('error', function(err){
