@@ -30,6 +30,8 @@ app.use('/', index);
 app.use('/users', users);
 
 // Mine
+
+app.use(express.static('public'));
 app.use('/upload', upload);
 app.use('/list', list);
 app.use('/show', show);
