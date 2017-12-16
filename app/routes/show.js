@@ -8,17 +8,22 @@ var vcf = require('biojs-vcf');
 
 router.get('/:fileName', function(req, res, next) {
 
+    console.log(typeof next);
+
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires", 0);
+
     var routeToFiles = __dirname + '/../uploads/';
     var myFeature = [];
-    console.log(routeToFiles + req.param('fileName'));
-    vcf.read(routeToFiles + req.param('fileName'));
+    console.log(routeToFiles + req.params.fileName);
+    vcf.read(routeToFiles + req.params.fileName);
     vcf.on('data', function(feature){
         myFeature.push(feature);
     });
 
     vcf.on('end', function(feature){
         console.log('end of file')
-        console.log(myFeature);
         res.render('show', { data: myFeature});
     });
 
