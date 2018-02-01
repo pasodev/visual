@@ -1,21 +1,24 @@
 extends layout
 
 block content
-    h1 Formulario de subida de ficheros
+    h1 Upload files form
 
     if resp
        h2 #{resp}
        h2
         a(href='/')
-           Volver al indice
-       h2 o subir otro fichero
+           Volver Go back
+       h2 upload another file
 
     form(method='POST' action='upload' enctype='multipart/form-data')
         div.form-group
             input#name.form-control(type='file' name='filename' multiple='multiple')
-            button.btn.btn-primary(type='submit') Subir
+            button.btn.btn-primary(type='submit') upload
 
     if errors
         ul
             for error in errors
                 li!= error.msg
+    div(class='btn-group')
+        a(href='/')
+             button(type='button' class='btn btn-default') Go back

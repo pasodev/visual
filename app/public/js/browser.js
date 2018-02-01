@@ -68,7 +68,7 @@ $('document').ready(function(){
             var element = {};
             element.pos = parseInt(pos);
             element.val = parseInt(mydata[chr].qual);
-            element.label = JSON.stringify(mydata[chr].pos);
+            element.label = JSON.stringify(mydata[chr].ref);
             chrdata.push(element);
             minPosition = pos;
             maxPosition = pos;
